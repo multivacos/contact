@@ -11,19 +11,21 @@ const MATERIAL_MODULES = [MatToolbarModule, MatIconModule, MatButtonModule];
   imports: [MATERIAL_MODULES],
   template: `
     <mat-toolbar color="primary">
-      <a mat-button routerLink="/">
-        <mat-icon>home</mat-icon>
-        <span>Home</span>
-      </a>
-      <a mat-button routerLink="/contacts">
-        <mat-icon>list-alt</mat-icon>
-        <span>Contacts</span>
-      </a>
+      <button
+        mat-icon-button
+        routerLink="/"
+        class="example-icon"
+        aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Contact book</span>
+      <button mat-icon-button routerLink="/contacts">
+        <mat-icon>list_alt</mat-icon>
+      </button>
       <span class="spacer"></span>
-      <a mat-button (click)="emitClick()">
-        <mat-icon>add_box</mat-icon>
-        <span>New</span>
-      </a>
+      <button mat-icon-button (click)="emitClick()">
+        <mat-icon>person_add</mat-icon>
+      </button>
     </mat-toolbar>
   `,
 })
